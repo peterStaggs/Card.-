@@ -1,0 +1,26 @@
+<ion-view title="Login" hide-nav-bar="true" cache-view="false" nav-transition="none" id="page2">
+  <ion-content padding="true" class="manual-ios-statusbar-padding" scroll="false">
+    <div id="login-markdown1" ng-if="" class="show-list-numbers-and-dots error-box">
+      <p style="color:#000000;">{{error}}</p>
+    </div>
+    <div>
+      <img src="img/3kHNHnQARTmLhE47qe4e_ScreenShot2017-03-20at5.44.46PM.png" style="display: block; width: 60%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <h2 id="login-heading1" style="color:#FFFCFC;text-align:center;">Here's my Card.</h2>
+    <form id="login-form1" class="list center form">
+      <div class="spacer" style="height: 40px;"></div>
+      <ion-list id="login-list1">
+        <label class="item item-input login_input" id="login-input1">
+          <span class="input-label" style="color:white">Username</span>
+          <input type="text" class="white" placeholder="" ng-model="user.username" style="color:white">
+        </label>
+        <label class="item item-input login_input" id="login-input2">
+          <span class="input-label" style="color:white">Password</span>
+          <input type="password" placeholder="" ng-model="user.password" style="color:white">
+        </label>
+      </ion-list>
+      <button id="login-button1" type="submit" ng-click="login()" class="button button-light  button-block button-outline">Log in</button>
+      <a ui-sref="createAccount" id="login-button2" class="button button-light  button-block button-outline">...Or create an account. It's free.</a>
+    </form>
+  </ion-content>
+</ion-view>
