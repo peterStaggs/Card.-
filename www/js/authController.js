@@ -2,7 +2,11 @@ angular.module('app').controller('AuthController', [
     '$scope',
     '$http',
     '$location',
-    function($scope, $http, $location) {
+    'RootFactory',
+    '$timeout',
+
+
+    function($scope, $http, $location, RootFactory, $timeout) {
         $scope.user = {
             username: '',
             password: ''
@@ -20,9 +24,11 @@ angular.module('app').controller('AuthController', [
                 }
             }).then(
                 res => {
-                    if (res.data.success === true) {
-                        $location.path('/products');
-                    }
+                    RootFactory.setToken(res.data.token);
+                    console.log(RootFactory.getToken());
+                    // if (res.data.success === true) {
+                    //     $location.path('/home');
+                    // }
                 },
                 err => console.log("error", err)
             );
@@ -39,14 +45,24 @@ angular.module('app').controller('AuthController', [
                 }
             }).then(
                 res => {
+                    RootFactory.setToken(res.data.token);
+                    console.log(RootFactory.getToken());
                     console.log("LOGIN SUCCESS", res);
-
-                    $location.path('/createAccount');
+                    $location.path('/home');
                     console.log('hey there')
                 },
                 console.error
             );
         };
+
+        $scope.logout = function() {
+            RootFactory.destroyToken();
+            console.log(RootFactory.getToken(), "TOKEN ELIMINATED. YOU'VE BEEN LOGGED OUT")
+            $location.path("/login")
+        };
+
+        
+      
 
     }
 ]);

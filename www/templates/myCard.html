@@ -1,0 +1,42 @@
+<ion-view title="My Card" hide-nav-bar="true" cache-view="false" nav-transition="none" id="page5">
+    <ion-content padding="true" class="manual-ios-statusbar-padding" scroll="false">
+        <h1 id="myCard-heading4" style="color:#FFFFFF;text-align:center;">My Card.</h1>
+        <form id="myCard-form6" class="list">
+            <label class="item item-input" id="myCard-input8">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="" ng-model="card.full_name">
+            </label>
+            <label class="item item-input" id="myCard-input9">
+                <span class="input-label">Phone</span>
+                <input type="text" placeholder="" ng-model="card.phone_number">
+            </label>
+            <label class="item item-input" id="myCard-input10">
+                <span class="input-label">Title</span>
+                <input type="text" placeholder="" ng-model="card.title">
+            </label>
+            <label class="item item-input" id="myCard-input11">
+                <span class="input-label">Business</span>
+                <input type="text" placeholder="" ng-model="card.business">
+            </label>
+            <label class="item item-input" id="myCard-input12">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="" ng-model="card.email">
+            </label>
+            <label class="item item-input" id="myCard-input13">
+                <span class="input-label">LinkedIn</span>
+                <input type="text" placeholder="" ng-model="card.linkedin">
+            </label>
+            <label class="item item-input" id="myCard-input14">
+                <span class="input-label">Social Media</span>
+                <input type="text" placeholder="" ng-model="card.social_media">
+            </label>
+        </form>
+        <button id="myCard-button9" class="button button-light  button-block button-outline" ng-click="postMyCard()">Update</button>
+        <div id="myCard-button-bar1" class="button-bar">
+            <a ui-sref="home" id="myCard-button14" class="button button-light  button-block button-outline">Home</a>
+            <div ng-controller="AuthController">
+                <a ui-sref="login" id="myCard-button16" class="button button-light  button-block button-outline" ng-click="logout()">Logout</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

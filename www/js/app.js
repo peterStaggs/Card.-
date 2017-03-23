@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives', 'app.services', ])
+angular.module('app', ['ionic'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider, $stateProvider, $urlRouterProvider) {
 
@@ -82,3 +82,32 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
         }
     };
 });
+
+angular.module('app').factory('RootFactory', [
+  "$http",
+  
+  ($http) => {
+    let secure_token = null;
+    let apiURL="http://localhost:8000/"
+    return {
+      getApiRoot () {
+        return $http({
+          url: apiUrl,
+          headers: {
+            'Authorization': "Token " + secure_token
+          }
+        }).then(res => res.data)
+      },
+      setToken (token) {
+        secure_token = token
+      },
+      getToken () {
+        console.log('secure_token', secure_token )
+        return secure_token;
+      },
+      destroyToken () {
+        secure_token = null;
+      }
+    }
+  }
+]);

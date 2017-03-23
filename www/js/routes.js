@@ -1,4 +1,4 @@
-angular.module('app.routes', [])
+angular.module('app')
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -20,6 +20,18 @@ angular.module('app.routes', [])
         url: '/createAccount',
         templateUrl: 'templates/createAccount.html',
         controller: 'AuthController'
+    })
+
+    .state('home', {
+        url: '/home',
+        templateUrl: 'templates/home.html',
+        controller: 'homeCtrl'
+    })
+
+    .state('myCard', {
+        url: '/mycard',
+        templateUrl: 'templates/myCard.html',
+        controller: 'myCardCtrl'
     })
 
     $urlRouterProvider.otherwise('/login')
