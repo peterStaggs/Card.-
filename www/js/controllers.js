@@ -28,7 +28,7 @@ angular.module('app')
             console.log('card', $scope.card)
             $http({
                     method: 'POST',
-                    url: "http://localhost:8000/card/",
+                    url: "http://fast-garden-20886.herokuapp.com/card/",
                     headers: {
                         'Content-Type': 'application/JSON',
                         'Authorization': "Token " + RootFactory.getToken()
@@ -51,7 +51,7 @@ angular.module('app')
         console.log('gettokens', RootFactory.getToken())
         $http({
             method: 'GET',
-            url: "http://localhost:8000/card/",
+            url: "http://fast-garden-20886.herokuapp.com/card/",
             headers: {
                 'Content-Type': 'application/JSON',
                 'Authorization': "Token " + RootFactory.getToken(),
@@ -83,7 +83,7 @@ angular.module('app')
                     $http({
                             method: 'POST',
 
-                            url: "http://localhost:8000/card_contacts/",
+                            url: "http://fast-garden-20886.herokuapp.com/card_contacts/",
                             headers: {
                                 'Content-Type': 'application/JSON',
                                 'Authorization': "Token " + RootFactory.getToken()
@@ -106,7 +106,7 @@ angular.module('app')
         $scope.keepCards = function() {
             $http({
                 method: 'GET',
-                url: "http://localhost:8000/card_contacts/",
+                url: "http://fast-garden-20886.herokuapp.com/card_contacts/",
                 headers: {
                     'Content-Type': 'application/JSON',
                     'Authorization': "Token " + RootFactory.getToken(),

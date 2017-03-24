@@ -13,7 +13,7 @@ angular.module('app').controller('AuthController', [
         }
         $scope.register = function() {
             $http({
-                url: "http://localhost:8000/register/",
+                url: "http://fast-garden-20886.herokuapp.com/register/",
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
@@ -37,7 +37,7 @@ angular.module('app').controller('AuthController', [
 
         $scope.login = function() {
             $http({
-                url: "http://localhost:8000/api-token-auth/",
+                url: "http://fast-garden-20886.herokuapp.com/api-token-auth/",
                 method: "POST",
                 data: {
                     "username": $scope.user.username,
